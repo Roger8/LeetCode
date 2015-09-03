@@ -42,13 +42,16 @@ char* convert(char* s, int numRows) {
         int base  = i;
         
         while(base < len){
-            *s1++ = *(s+base);// 
-			
+            // 处理所有不在对角线上的
+			*s1++ = *(s+base);
+			// 处理对角线上元素
+			//
             if(i>0 && i<numRows-1){
                 int t = base + zigsize - 2*i;
                 if(t< len)
                     *s1++ = *(s+t);
             }
+			//每次加上一个折线步长
             base  = base + zigsize;
         }
     }
