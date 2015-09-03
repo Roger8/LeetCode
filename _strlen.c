@@ -18,3 +18,11 @@ size_t strlen(const char *s) {
     while (*s) ++s;
     return s - p;
 }
+
+// 补充
+int main()
+{
+    char a[] = "Hello world"; /* the literal string is copied into a local array which is destroyed after that array goes out of scope */
+
+    char* p = "Hello world"; /* the literal string is copied in the read-only section of memory (any attempt to modify it is an undefined behavior) */
+}
